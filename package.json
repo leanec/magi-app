@@ -1,32 +1,14 @@
 {
-  "name": "@nativescript/template-blank-vue",
   "main": "app.js",
-  "displayName": "Blank",
-  "version": "7.0.1",
-  "description": "NativeScript Application",
-  "author": "NativeScript Team <oss@nativescript.org>",
-  "license": "SEE LICENSE IN <your-license-filename>",
-  "repository": "<fill-your-repository-here>",
-  "homepage": "https://github.com/NativeScript/nativescript-app-templates",
+  "displayName": "Magi App",
+  "description": "Magi Mobile App",
+  "author": "Leanec",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": "https://github.com/leanec/magi-app",
+  "homepage": "https://github.com/leanec/magi-app",
   "bugs": {
-    "url": "https://github.com/NativeScript/NativeScript/issues"
+    "url": "https://github.com/leanec/magi-app/issues"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "nstudio",
-    "nativescript",
-    "mobile",
-    "{N}",
-    "tns",
-    "vue",
-    "nativescript-vue",
-    "template",
-    "master-detail",
-    "detail",
-    "category-general"
-  ],
   "dependencies": {
     "@nativescript/core": "~7.0.0",
     "@nativescript/theme": "~2.3.0",
@@ -37,7 +19,12 @@
     "@babel/preset-env": "~7.1.0",
     "@nativescript/android": "7.0.0",
     "@nativescript/webpack": "~3.0.0",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "~8.0.0",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-vue": "^6.2.2",
     "nativescript-vue-template-compiler": "~2.8.0",
     "node-sass": "^4.7.1",
     "vue-loader": "~15.9.3"
