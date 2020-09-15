@@ -1,14 +1,12 @@
 <p align="center">
-  <a href="http://www.nativescript.org">
-    <img alt="NativeScript" src="https://i.imgur.com/YmNIMqS.png" />
+  <a href="https://www.xmg.network/">
+    <img alt="Magi" src="https://i.imgur.com/rUY6i4T.png" />
   </a>
 </p>
 
 <h1 align="center">
 Magi Mobile App
 </h1>
-
-<hr>
 
 Magi iOS and Android App based on [NativeScript](http://www.nativescript.org)
 
