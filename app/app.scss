@@ -19,3 +19,139 @@
     font-family: "Font Awesome 5 Free", "fa-regular-400";
     font-weight: 400;
 }
+
+// General
+.action-bar {
+  background: #021042;
+  color: white;
+}
+.action-bar .icon {
+  font-size: 18; color: #5e63b6;
+}
+.heading {
+  font-size: 18;
+  font-weight: 500 ;
+  opacity: 1;
+  color: #021042;
+}
+.heading.light{
+  font-weight: 300;
+}
+.heading.twice {
+  font-size:30;
+}
+
+// Home Page
+.page {
+  font-size: 14;
+  background-color: #ebf1f2;
+  color: #021042;
+  font-family: 'Poppins', 'Poppins_SemiBold', 'Poppins SemiBold', 'Poppins_Medium';
+}
+.icon {
+  color: #021042;
+  font-size: 25;
+  vertical-align: middle;
+}
+#main .heading.light {
+  color:white;
+}
+#main .heading.dark {
+  color:#021042;
+}
+#main .heading {
+  padding-left: 15;
+  margin-bottom: 10;
+  font-weight: 600;
+  margin-top: -4;
+  font-size: 17;
+}
+.subheading {
+  opacity: 0.6;
+  font-size: 11;
+  padding-left:15;
+  font-weight: 500;
+}
+
+// Exchanges cards
+.card {
+  background-color: white;
+  border-radius: 3 ;
+  margin: 10 0;
+}
+.card.red .label {
+  color: #ff2e63;
+}
+.card.green .label {
+  color: #21ce88;
+}
+.card.overview {
+  margin-right: 5;
+  padding-bottom: 15;
+  color: #021042;
+  margin: 0;
+}
+.card.card.overview .sub, .sub {
+  margin-top: -6;
+  font-size: 11;
+}
+.card.overview .val {
+  font-weight: 600;
+  margin-bottom: -6;
+  font-size: 27;
+}
+.card.overview .label {
+  margin-bottom: -6;
+}
+
+// Network Data
+.network {
+  margin: -10 15 0 15;
+  border-radius: 3;
+  background: linear-gradient(124deg, rgb(29, 98, 240) 0%, rgb(44, 135, 166) 40%, rgb(58, 172, 90) 80%, rgb(65, 191, 53) 100%);
+}
+#main .network .heading{
+  padding: 0;
+  margin: 0;
+  font-size:24;
+}
+#main .network .subheading{
+  padding: 0;
+  margin-top: -10;
+  color: white;
+  padding-bottom: 2;
+}
+
+// Blocks Data
+.blocks .subheading {
+  margin-top: -2;
+}
+.objective{
+  padding-bottom: 15;
+}
+#main .objective .heading{
+  margin-bottom: 0 ;
+  font-weight: 600;
+}
+.list .val {
+  font-weight:400;
+  opacity:0.7;
+  font-size:12;
+  padding:0 5 0 25;
+  margin-top: 2;
+}
+.block-img {
+  width: 45;
+  height: 45;
+  border-radius: 45;
+  border-width: 0;
+  border-color: #ebf1f2;
+  left: 2;
+  top: 2;
+}
+.block-num{
+  margin-left: 15;
+  font-size: 14;
+  margin-bottom:-4;
+  font-weight: 600;
+}
