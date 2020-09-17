@@ -57,14 +57,14 @@
             </FlexboxLayout>
           </StackLayout>
           <!-- Blocks Area -->
-          <StackLayout class="card blocks" orientation="vertical" row="2" style="margin: 10 15 0 15;padding: 0;">
-            <FlexboxLayout width="100%" flexDirection="row" justifyContent="space-between" alignItems="flex-end" style="background: #fafbfc; border-radius: 3 3 0 0;">
+          <StackLayout class="card blocks" orientation="vertical" row="2" style="margin: 10 15 0 15; padding: 0;">
+            <FlexboxLayout width="100%" flexDirection="row" justifyContent="space-between" alignItems="flex-end" style="background: #d3d8dA; border-radius: 3 3 0 0;">
               <FlexboxLayout flexDirection="row-reverse" alignItems="center" class="objective" alignSelf="flex-start" style="padding-top: 20;">
                 <Label class="subheading" text="Latest 10" style="padding-left: 10;" />
                 <Label class="heading dark" text="XMG Blocks" />
               </FlexboxLayout>
             </FlexboxLayout>
-            <StackLayout orientation="vertical" style="padding: 15 0 ; margin: 0 15;">
+            <StackLayout orientation="vertical" style="padding: 10 0 ; margin: 0 15;">
               <StackLayout v-for="(block, i) in network.blocks" :key="i">
                 <FlexboxLayout class="list" flexDirection="row" alignItems="center">
                   <Image v-if="block.miner_id === 0" class="block-img" src="~/images/pos.png" />
@@ -78,19 +78,42 @@
                       </FormattedString>
                     </Label>
                   </FlexboxLayout>
-                  <Label :text="`${block.tx} Tx`" style="font-size: 20; font-weight: 600; color: #b5b9ba; text-align: center; width: 50;" />
+                  <Label :text="`${block.tx} Tx`" style="font-size: 20; font-weight: 600; color: #d3d8dA; text-align: center; width: 50;" />
                 </FlexboxLayout>
-                <Image width="100%" src="" style="background: #ebf1f2; height: 1; margin:15 0;" />
+                <Image width="100%" src="" style="background: #d3d8dA; height: 1; margin: 6 0;" />
               </StackLayout>
             </StackLayout>
           </StackLayout>
         </GridLayout>
       </ScrollView>
+      <!-- Bottom Navigation -->
+      <StackLayout row="1" style="padding:10 15 10 15;" backgroundColor="#ebf1f2" class="bottom-nav-wrapper">
+        <FlexboxLayout id="bottom-nav" alignItems="center" flexDirection="row">
+          <StackLayout flexGrow="1" class="ico" height="100%">
+            <Image class="ico-wrapper" width="100%" />
+            <Label style="text-align:center;" class="icon fab" flexGrow="1" text.decode="&#xf379;" @tap="openLink(1)" />
+          </StackLayout>
+          <StackLayout flexGrow="1" class="ico" height="100%">
+            <Image class="ico-wrapper" width="100%" />
+            <Label style="text-align:center;" class="icon fab" flexGrow="1" text.decode="&#xf392;" @tap="openLink(2)" />
+          </StackLayout>
+          <Image class="ico-magi" width="100%" src="~/images/xmg.png" @tap="openLink(3)" />
+          <StackLayout flexGrow="1" class="ico" height="100%">
+            <Image class="ico-wrapper" width="100%" />
+            <Label style="text-align:center;" class="icon fab" flexGrow="1" text.decode="&#xf099;" @tap="openLink(4)" />
+          </StackLayout>
+          <StackLayout flexGrow="1" class="ico" height="100%">
+            <Image class="ico-wrapper" width="100%" />
+            <Label style="text-align:center;" class="icon fas" flexGrow="1" text.decode="&#xf0c1;" @tap="openLink(5)" />
+          </StackLayout>
+        </FlexboxLayout>
+      </StackLayout>
     </GridLayout>
   </Page>
 </template>
 
 <script>
+import * as utils from "tns-core-modules/utils/utils";
 import * as ApiService from "~/shared/api-service";
 
 export default {
@@ -148,6 +171,25 @@ export default {
         this.network.difficulty = "-";
         this.network.blocks = {};
       });
+    },
+    openLink(number) {
+      switch (number) {
+        case 1:
+          utils.openUrl("https://bitcointalk.org/index.php?topic=735170.0/");
+          break;
+        case 2:
+          utils.openUrl("https://discord.gg/EPHw749/");
+          break;
+        case 3:
+          utils.openUrl("https://www.xmg.network/");
+          break;
+        case 4:
+          utils.openUrl("https://twitter.com/Coin_Magi_XMG");
+          break;
+        case 5:
+          utils.openUrl("https://chainz.cryptoid.info/xmg/");
+          break;
+      }
     },
   },
 };
