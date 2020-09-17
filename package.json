@@ -12,6 +12,7 @@
   "dependencies": {
     "@nativescript/core": "~7.0.0",
     "@nativescript/theme": "~2.3.0",
+    "nativescript-https": "^2.2.2",
     "nativescript-vue": "~2.8.0"
   },
   "devDependencies": {
