@@ -11,9 +11,19 @@ Magi Mobile App
 Magi iOS and Android App based on [NativeScript](http://www.nativescript.org)
 
 ## Instructions
-* ``git clone https://github.com/leanec/magi-app.git``
-* ``npm install``
-* ``ns build``
+``` bash
+# Clone the repo
+git clone https://github.com/leanec/magi-app.git
+
+# Install dependencies
+npm install
+
+# Build for production
+ns build <platform>
+
+# Build, watch for changes and debug the application
+ns debug <platform>
+```
 
 ## Help
 Consider supporting Magi Mobile App by donating to **9PbF1kPZWjVxfvTYLuzuoLkXkNncYijSKM**
