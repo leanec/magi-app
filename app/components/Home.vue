@@ -14,7 +14,7 @@
               <StackLayout height="100%" style="background: #021042; padding: 20 0 20 0;">
                 <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
                   <WrapLayout orientation="horizontal">
-                    <StackLayout orientation="vertical" class="card red overview" width="100" style="text-align: center; margin-left: 15;">
+                    <StackLayout orientation="vertical" class="card red overview" width="100" style="text-align: center; margin-left: 15;" @tap="openLink(exchange.btcpop.url)">
                       <FlexboxLayout flexDirection="column" style="padding: 15 10;">
                         <Image width="55" marginBottom="10" src="~/images/ico-btcpop.png" />
                         <StackLayout v-show="exchange.btcpop.loading" height="70" verticalAlignment="middle" horizontalAlignment="center">
@@ -25,7 +25,7 @@
                       </FlexboxLayout>
                       <Label v-show="!exchange.btcpop.loading" :text="`Vol. ${exchange.btcpop.vol}`" class="label" style="font-size: 13;" />
                     </StackLayout>
-                    <StackLayout orientation="vertical" class="card green overview" width="100" style="text-align: center;">
+                    <StackLayout orientation="vertical" class="card green overview" width="100" style="text-align: center;" @tap="openLink(exchange.moondex.url)">
                       <FlexboxLayout flexDirection="column" style="padding: 15 10;">
                         <Image width="55" marginBottom="10" src="~/images/ico-moondex.png" />
                         <StackLayout v-show="exchange.moondex.loading" height="70" verticalAlignment="middle" horizontalAlignment="center">
@@ -42,7 +42,7 @@
             </StackLayout>
             <!-- Network Area -->
             <StackLayout class="network" row="1">
-              <FlexboxLayout height="100%" width="100%" flexDirection="row" justifyContent="space-between" alignItems="center" style="padding: 0 15;">
+              <FlexboxLayout height="100%" width="100%" flexDirection="row" justifyContent="space-between" alignItems="center" style="padding: 0 15;" @tap="openLink(network.url)">
                 <Image width="50" src="~/images/cpu.png" />
                 <FlexboxLayout v-show="network.loading" flexDirection="column" justifyContent="center" flexGrow="1">
                   <ActivityIndicator :busy="network.loading" width="60" height="60" color="#ffffff" />
@@ -78,7 +78,7 @@
                 <ActivityIndicator :busy="network.loading" width="60" height="60" color="#021042" />
               </StackLayout>
               <StackLayout v-show="!network.loading" orientation="vertical" style="padding: 10 0 ; margin: 0 15;">
-                <StackLayout v-for="(block, i) in network.blocks" :key="i">
+                <StackLayout v-for="(block, i) in network.blocks" :key="i" @tap="openLink(`${network.url}block.dws?${block.height}.htm`)">
                   <FlexboxLayout class="list" flexDirection="row" alignItems="center">
                     <Image v-if="block.miner_id === 0" class="block-img" src="~/images/pos.png" />
                     <Image v-else class="block-img" src="~/images/pow.png" />
@@ -104,20 +104,20 @@
           <FlexboxLayout id="bottom-nav" alignItems="center" flexDirection="row">
             <StackLayout flexGrow="1" class="ico" height="100%">
               <Image class="ico-wrapper" width="100%" />
-              <Label style="text-align:center;" class="icon fab" flexGrow="1" text.decode="&#xf379;" @tap="openLink(1)" />
+              <Label style="text-align:center;" class="icon fab" flexGrow="1" text.decode="&#xf379;" @tap="openLink(navigation.bitcointalk)" />
             </StackLayout>
             <StackLayout flexGrow="1" class="ico" height="100%">
               <Image class="ico-wrapper" width="100%" />
-              <Label style="text-align:center;" class="icon fab" flexGrow="1" text.decode="&#xf392;" @tap="openLink(2)" />
+              <Label style="text-align:center;" class="icon fab" flexGrow="1" text.decode="&#xf392;" @tap="openLink(navigation.discord)" />
             </StackLayout>
-            <Image class="ico-magi" width="100%" src="~/images/xmg.png" @tap="openLink(3)" />
+            <Image class="ico-magi" width="100%" src="~/images/xmg.png" @tap="openLink(navigation.web)" />
             <StackLayout flexGrow="1" class="ico" height="100%">
               <Image class="ico-wrapper" width="100%" />
-              <Label style="text-align:center;" class="icon fab" flexGrow="1" text.decode="&#xf099;" @tap="openLink(4)" />
+              <Label style="text-align:center;" class="icon fab" flexGrow="1" text.decode="&#xf099;" @tap="openLink(navigation.twitter)" />
             </StackLayout>
             <StackLayout flexGrow="1" class="ico" height="100%">
               <Image class="ico-wrapper" width="100%" />
-              <Label style="text-align:center;" class="icon fas" flexGrow="1" text.decode="&#xf0c1;" @tap="openLink(5)" />
+              <Label style="text-align:center;" class="icon fas" flexGrow="1" text.decode="&#xf0c1;" @tap="openLink(navigation.blockchain)" />
             </StackLayout>
           </FlexboxLayout>
         </StackLayout>
@@ -138,11 +138,13 @@ export default {
           loading: true,
           last: "-",
           vol: "-",
+          url: "https://btcpop.co/Exchange/XMG",
         },
         moondex: {
           loading: true,
           last: "-",
           vol: "-",
+          url: "https://moondex.org/market/BTC-XMG",
         },
       },
       network: {
@@ -150,6 +152,14 @@ export default {
         hashrate: "-",
         difficulty: "-",
         blocks: {},
+        url: "https://chainz.cryptoid.info/xmg/",
+      },
+      navigation: {
+        bitcointalk: "https://bitcointalk.org/index.php?topic=735170.0/",
+        discord: "https://discord.gg/EPHw749/",
+        web: "https://www.xmg.network/",
+        twitter: "https://twitter.com/Coin_Magi_XMG",
+        blockchain: "https://chainz.cryptoid.info/xmg/",
       },
     };
   },
@@ -201,30 +211,14 @@ export default {
         this.network.loading = false;
       });
     },
-    openLink(number) {
-      switch (number) {
-        case 1:
-          utils.openUrl("https://bitcointalk.org/index.php?topic=735170.0/");
-          break;
-        case 2:
-          utils.openUrl("https://discord.gg/EPHw749/");
-          break;
-        case 3:
-          utils.openUrl("https://www.xmg.network/");
-          break;
-        case 4:
-          utils.openUrl("https://twitter.com/Coin_Magi_XMG");
-          break;
-        case 5:
-          utils.openUrl("https://chainz.cryptoid.info/xmg/");
-          break;
-      }
+    openLink(url) {
+      utils.openUrl(url);
     },
     refreshData(args) {
-      var pullRefresh = args.object;
+      const pullRefresh = args.object;
       this.getExchanges();
       this.getNetwork();
-      setTimeout(function () {
+      setTimeout(() => {
         pullRefresh.refreshing = false;
       }, 1000);
     },
