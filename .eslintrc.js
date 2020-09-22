@@ -21,8 +21,8 @@ module.exports = {
     "vue",
   ],
   rules: {
-    "semi": ["error", "always"],
-    "quotes": ["error", "double"],
+    semi: ["error", "always"],
+    quotes: ["error", "double"],
     "import/extensions": "off",
     "max-len": "off",
     "import/no-unresolved": "off",

@@ -104,20 +104,20 @@
           <FlexboxLayout id="bottom-nav" alignItems="center" flexDirection="row">
             <StackLayout flexGrow="1" class="ico" height="100%">
               <Image class="ico-wrapper" width="100%" />
-              <Label style="text-align:center;" class="icon fab" flexGrow="1" text.decode="&#xf379;" @tap="openLink(navigation.bitcointalk)" />
+              <Label style="text-align:center;" class="icon fab" text.decode="&#xf379;" flexGrow="1" @tap="openLink(navigation.bitcointalk)" />
             </StackLayout>
             <StackLayout flexGrow="1" class="ico" height="100%">
               <Image class="ico-wrapper" width="100%" />
-              <Label style="text-align:center;" class="icon fab" flexGrow="1" text.decode="&#xf392;" @tap="openLink(navigation.discord)" />
+              <Label style="text-align:center;" class="icon fab" text.decode="&#xf392;" flexGrow="1" @tap="openLink(navigation.discord)" />
             </StackLayout>
             <Image class="ico-magi" width="100%" src="~/images/xmg.png" @tap="openLink(navigation.web)" />
             <StackLayout flexGrow="1" class="ico" height="100%">
               <Image class="ico-wrapper" width="100%" />
-              <Label style="text-align:center;" class="icon fab" flexGrow="1" text.decode="&#xf099;" @tap="openLink(navigation.twitter)" />
+              <Label style="text-align:center;" class="icon fab" text.decode="&#xf099;" flexGrow="1" @tap="openLink(navigation.twitter)" />
             </StackLayout>
             <StackLayout flexGrow="1" class="ico" height="100%">
               <Image class="ico-wrapper" width="100%" />
-              <Label style="text-align:center;" class="icon fas" flexGrow="1" text.decode="&#xf0c1;" @tap="openLink(navigation.blockchain)" />
+              <Label style="text-align:center;" class="icon fas" text.decode="&#xf0c1;" flexGrow="1" @tap="openLink(navigation.blockchain)" />
             </StackLayout>
           </FlexboxLayout>
         </StackLayout>
