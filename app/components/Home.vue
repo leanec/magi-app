@@ -2,10 +2,10 @@
   <Page id="main" class="page">
     <ActionBar height="60" flat="true" title="magi" class="action-bar">
       <NavigationButton visibility="hidden" />
-      <Image src="~/images/logo-xmg.png" marginTop="10" />
+      <Image src="~/images/logo-xmg.png" marginTop="5" marginBottom="5" />
     </ActionBar>
-    <PullToRefresh @refresh="refreshData">
-      <GridLayout columns="*" rows="*, auto" class="page" backgroundColor="#ebf1f2">
+    <GridLayout columns="*" rows="*, auto" class="page" backgroundColor="#ebf1f2">
+      <PullToRefresh row="0" @refresh="refreshData">
         <!-- Scroll View -->
         <ScrollView row="0" orientation="vertical" scrollBarIndicatorVisible="false">
           <GridLayout rows="auto,70,*" col="auto">
@@ -99,30 +99,30 @@
             </StackLayout>
           </GridLayout>
         </ScrollView>
-        <!-- Bottom Navigation -->
-        <StackLayout row="1" style="padding:10 15 10 15;" backgroundColor="#ebf1f2" class="bottom-nav-wrapper">
-          <FlexboxLayout id="bottom-nav" alignItems="center" flexDirection="row">
-            <StackLayout flexGrow="1" class="ico" height="100%">
-              <Image class="ico-wrapper" width="100%" />
-              <Label style="text-align:center;" class="icon fab" text.decode="&#xf379;" flexGrow="1" @tap="openLink(navigation.bitcointalk)" />
-            </StackLayout>
-            <StackLayout flexGrow="1" class="ico" height="100%">
-              <Image class="ico-wrapper" width="100%" />
-              <Label style="text-align:center;" class="icon fab" text.decode="&#xf392;" flexGrow="1" @tap="openLink(navigation.discord)" />
-            </StackLayout>
-            <Image class="ico-magi" width="100%" src="~/images/xmg.png" @tap="openLink(navigation.web)" />
-            <StackLayout flexGrow="1" class="ico" height="100%">
-              <Image class="ico-wrapper" width="100%" />
-              <Label style="text-align:center;" class="icon fab" text.decode="&#xf099;" flexGrow="1" @tap="openLink(navigation.twitter)" />
-            </StackLayout>
-            <StackLayout flexGrow="1" class="ico" height="100%">
-              <Image class="ico-wrapper" width="100%" />
-              <Label style="text-align:center;" class="icon fas" text.decode="&#xf0c1;" flexGrow="1" @tap="openLink(navigation.blockchain)" />
-            </StackLayout>
-          </FlexboxLayout>
-        </StackLayout>
-      </GridLayout>
-    </PullToRefresh>
+      </PullToRefresh>
+      <!-- Bottom Navigation -->
+      <StackLayout row="1" style="padding:10 15 10 15;" backgroundColor="#ebf1f2" class="bottom-nav-wrapper">
+        <FlexboxLayout id="bottom-nav" alignItems="center" flexDirection="row">
+          <StackLayout flexGrow="1" class="ico" height="100%">
+            <Image class="ico-wrapper" width="100%" />
+            <Label style="text-align:center;" class="icon fab" text.decode="&#xf379;" flexGrow="1" @tap="openLink(navigation.bitcointalk)" />
+          </StackLayout>
+          <StackLayout flexGrow="1" class="ico" height="100%">
+            <Image class="ico-wrapper" width="100%" />
+            <Label style="text-align:center;" class="icon fab" text.decode="&#xf392;" flexGrow="1" @tap="openLink(navigation.discord)" />
+          </StackLayout>
+          <Image class="ico-magi" width="100%" src="~/images/xmg.png" @tap="openLink(navigation.web)" />
+          <StackLayout flexGrow="1" class="ico" height="100%">
+            <Image class="ico-wrapper" width="100%" />
+            <Label style="text-align:center;" class="icon fab" text.decode="&#xf099;" flexGrow="1" @tap="openLink(navigation.twitter)" />
+          </StackLayout>
+          <StackLayout flexGrow="1" class="ico" height="100%">
+            <Image class="ico-wrapper" width="100%" />
+            <Label style="text-align:center;" class="icon fas" text.decode="&#xf0c1;" flexGrow="1" @tap="openLink(navigation.blockchain)" />
+          </StackLayout>
+        </FlexboxLayout>
+      </StackLayout>
+    </GridLayout>
   </Page>
 </template>
 
