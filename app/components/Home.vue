@@ -11,7 +11,7 @@
           <GridLayout rows="auto,70,*" col="auto">
             <!-- Exchanges Area -->
             <StackLayout row="0">
-              <StackLayout height="100%" style="background: #021042; padding: 20 0 20 0;">
+              <StackLayout height="100%" style="background: #021042; padding: 10 0 20 0;">
                 <ScrollView orientation="horizontal" scrollBarIndicatorVisible="false">
                   <WrapLayout orientation="horizontal">
                     <StackLayout orientation="vertical" class="card red overview" width="100" style="text-align: center; margin-left: 15;" @tap="openLink(exchange.btcpop.url)">
